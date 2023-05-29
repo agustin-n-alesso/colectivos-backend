@@ -10,5 +10,5 @@ app.use(express.json());
 app.use('/localidades', RUTAS_LOCALIDADES);
 
 app.listen(process.env.PORT,() => {
-	console.log(`Servidor escuchando en puerto: ${process.env.PORT}`);
+	console.log("🚀 ~~ SERVER 	~ CONNECTION: ✅ ~ PORT:", process.env.PORT);
 })

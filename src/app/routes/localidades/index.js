@@ -1,5 +1,10 @@
 const express = require('express');
-const { crearLocalidad, modificarLocalidad, eliminarLocalidad, obtenerLocalidades } = require('../../controllers/localidades');
+const { crearLocalidad,
+	modificarLocalidad,
+	eliminarLocalidad,
+	obtenerLocalidades
+} = require('../../controllers/localidades');
+
 const RUTAS_LOCALIDADES = express.Router();
 
 RUTAS_LOCALIDADES.route('/')
