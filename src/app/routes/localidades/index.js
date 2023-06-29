@@ -10,6 +10,8 @@ const RUTAS_LOCALIDADES = express.Router();
 RUTAS_LOCALIDADES.route('/')
 	.get(obtenerLocalidades)
 	.post(crearLocalidad)
+
+RUTAS_LOCALIDADES.route('/:id')
 	.put(modificarLocalidad)
 	.delete(eliminarLocalidad)
 

@@ -1,7 +1,16 @@
+const Localidades =  require('../../models/database/tables/localidades');
+
 const crearLocalidad = (req, res) => {
+
+	const {body: {localidades}} = req;
+
+	localidades.forEach(localidad => {
+		const response = Localidades.create(localidad);
+	});
+
 	// logica de crear una localidad
 	res.json({
-		mensaje: 'Creando localidad'
+		mensaje: 'Localidades creadas'
 	})
 }
 
@@ -19,11 +28,11 @@ const eliminarLocalidad = (req, res) => {
 	})
 }
 
-const obtenerLocalidades = (req, res) => {
-	// logica de obtener localidades
-	res.json({
-		mensaje: 'Obteniendo localidades'
-	})
+const obtenerLocalidades = async (req, res) => {
+
+	const localidades = await Localidades.find().sort({orden:1});
+
+	res.json(localidades)
 }
 
 module.exports = {
